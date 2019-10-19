@@ -4,9 +4,9 @@ session_start();
 
 $host="localhost";
 $user="root";
-$pass="root";
-$conn=mysql_connect("$host","$user","$pass");
-mysql_select_db("placement",$conn);
+$pass="";
+$conn=mysqli_connect("$host","$user","$pass");
+mysqli_select_db($conn,"placement");
 
 $title=$_POST['title'];
 $date=$_POST['date'];
@@ -23,7 +23,7 @@ $email=$_POST['email'];
 $sql="insert into news(title,date,description,venue,last_date,contact,email) values ('$title','$date','$description','$venue','$ldate','$contact','$email')";
 
 
-if(!mysql_query($sql,$conn))
+if(!mysqli_query($conn,$sql))
 {
 die ('error:'.mysql_error());
 }

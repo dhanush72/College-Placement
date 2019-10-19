@@ -35,6 +35,7 @@ include "tpomenu.php"; ?>
   <link rel="stylesheet" href="../tpo/assets/css/new.css">
 	<style type="text/css">
 	body{
+		
 		font-family: 'Poppins', sans-serif;
 	}
 	    .bs-example{
@@ -80,5 +81,8 @@ include "tpomenu.php"; ?>
     </table>
 </div>
 <!-- End New Table -->
+
+
+
 </body>
 <?php include "../foot.html"; ?>

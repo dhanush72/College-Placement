@@ -3,18 +3,11 @@ include "tpomenu.php";
 	$tpoid = $_SESSION['s_id'];
 
 ?>
-<style type="text/css">
-    .bs-example{
-    	margin: 20px;
-    }
-    
-    hr {
-margin-top: 20px;
-margin-bottom: 20px;
-border: 0;
-border-top: 1px solid #7C7A7A;
-}
-</style>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tpo/assets/css/new.css">
+</head>
+
 
 <body>
 <div class="container">
@@ -45,7 +38,7 @@ border-top: 1px solid #7C7A7A;
                     <tr class="danger">
                         <td>Description</td>
                         <td><textarea row"5" name="description"></textarea>
-                        </td>  <td></td>
+                        
                     </tr>
 
                     <tr class="success">
@@ -85,6 +78,39 @@ border-top: 1px solid #7C7A7A;
         </div>
     </div>
 </div>
+
+<!-- New -->
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Venue</th>
+            <th>Last Date To Apply</th>
+            <th>Contact</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <form action="tponews.php" method="post" id="commentform">
+        <tr>
+            <td><input type="text" class="form-control" name="title" id="inputName"  placeholder="Event Name" value="" required data-validation-required-message="Cannot Be Blank"></td>
+            <td><input type="date" class="form-control" name="date" id="date" required data-validation-required-message="Cannot Be Blank"></td>
+            <td><textarea row"5" name="description"></textarea></td>
+            <td><input type="text" class="form-control" id="inputaddress" placeholder="Enter venue" name="venue" value="" required data-validation-required-message="Cannot Be Blank"></td>
+            <td><input type="date" class="form-control" id="inputaddress" placeholder="Enter venue" name="last_date" value="" required data-validation-required-message="Cannot Be Blank"></td>
+            <td><input type="text" class="form-control" id="inputabout" placeholder="Contact Details" name="contact" value="" required data-validation-required-message="Cannot Be Blank"></td>
+            <td><input type="text" class="form-control" id="inputinstitute" placeholder="Email" name="email" value="email" required data-validation-required-message="Cannot Be Blank"></td>
+            <td><button style="float:right" type="submit" class="btn btn-action">Submit</button></td>
+        </tr>
+        </form>
+        <tbody>
+    </table>
+    
+</div>
+<!-- End -->
         
 
 </body>

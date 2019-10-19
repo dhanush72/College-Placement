@@ -1,5 +1,9 @@
 <?php
 include "tpomenu.php"; ?>
+<head>
+  <link rel="stylesheet" href="../tpo/assets/table/css/main.css">
+  <link rel="stylesheet" href="../tpo/assets/table/css/util.css">
+</head>
 <?php
 					$tpoid = $_SESSION['s_id'];
 
@@ -30,7 +34,8 @@ include "tpomenu.php"; ?>
 ?>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<style type="text/css">
+  <link rel="stylesheet" href="../tpo/assets/css/new.css">
+  <style type="text/css">
 	    .bs-example{
 	    	margin: 20px;
 	    }
@@ -64,6 +69,7 @@ include "tpomenu.php"; ?>
                                             Pending Student List
                 </h4>
         </center>
+
 <div class="bs-example">
             <table class="table table-bordered table-striped" border="1" >
                 <thead class="Head">
@@ -85,15 +91,12 @@ include "tpomenu.php"; ?>
                     <th>Key Skills</th>
                     <th>Project</th>
                     <th>Approve Student</th>
-
-
-
                     </tr>
                 </thead>
                  <tbody>
 
                      <?php
-while ($row = mysqli_fetch_array($result)){
+              while ($row = mysqli_fetch_array($result)){
                 $sid= $row['sid'];
                 $fullname= $row['fullname'];
                 $dob = $row['dob'];
@@ -156,8 +159,41 @@ while ($row = mysqli_fetch_array($result)){
 </div>
 
     </div>
-</div><br><br><br><br><Br>
 
+  
+  <!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+
+			$(this).on('ps-x-reach-start', function(){
+				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+			});
+
+			$(this).on('ps-scroll-x', function(){
+				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+			});
+
+		});
+
+		
+		
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
 </body>
 <?php include "../foot.html"; ?>

@@ -18,6 +18,7 @@
     <!-- Fonts -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
+	
 	<link rel="stylesheet" href="../tpo/assets/css/styles.css">
 
 	<style>

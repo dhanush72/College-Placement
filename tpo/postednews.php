@@ -1,11 +1,15 @@
 <?php
 include "tpomenu.php"; ?>
 <head>
+	
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="../tpo/assets/css/new.css">
+<style type="text/css" media="screen,projection">
+	
 body{
+	
   font-family: 'Poppins', sans-serif;
-}
+	}
     .bs-example{
     	margin: 20px;
     }
@@ -61,20 +65,50 @@ while ($row = mysqli_fetch_array($result))
 
 ?>
 
-<main id="main">
+<!-- New -->
+<div class="py-5 service-6 ">
+    <div class="container d-flex justify-content-center">
+        <!-- Row  -->
+        <div class="row ">
+            <!-- Column -->
+            <div class="col-md-4 wrap-service6-box">
+                <div class="card border-0 bg-success-gradiant text-white mb-4">
+				<form name="remove news" method="post" action="removenews.php">	<article class="post">
+                    <div class="card-body">
+                        <p class="font-weight-medium text-white"><span class="posted-on"><time class="entry-date published" date=""><font color="black">Posted:</font>&nbsp;<?php echo $date; ?></time></span></p>
+						<h2><?php echo $title; ?> </h2>
+						<p class="mt-3"><?php echo $description; ?></p>
+						<p class=""><font color="black">Venue:</font>&nbsp;<?php echo $venue; ?></p>
+						<p class="subtitle"><font color="black">Last Date:</font>&nbsp;<?php echo $ldate;?></p>
+						<p class="subtitle"><font color="black">Email: </font>&nbsp;<?php echo $email; ?></p>
+						<p class="subtitle"><font color="black">Contact: </font>&nbsp;<?php echo $contact; ?></p>
+						<a href="#f4" class="linking"><input type="hidden" value="<?php echo $nid; ?>" name="newsid">
+            			<button type="submit" class="btn btn-action">Remove Event</button></a>
+					</div>
+					</article>
+				</form>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+    </div>
+</div>
+<?php } ?>
+<!-- End -->
+
+<!-- <main id="main">
 	<div class="container Table">
 		<div class="row topspace">
 			<div class="col-sm-8 col-sm-offset-2">
-				<form name="remove news" method="post" action="removenews.php">						<article class="post">
+				<form name="remove news" method="post" action="removenews.php">	<article class="post">
 					<header class="entry-header">
 						<div class="entry-meta">
 							<span class="posted-on"><time class="entry-date published" date=""><font color="black"><?php echo $date; ?></font></time></span>
 						</div>
 						<h1 class="entry-title" style="'Poppins', sans-serif;
-                            font-size:1.5em;
-
-
-                            font-weight:800;"><font color="red"><?php echo $title; ?></font></a></h1>
+							font-size:1.5em;
+							font-weight:800;">
+							<font color="red"><?php echo $title; ?></font></a></h1>
 					</header>
 					<div class="entry-content">
 						<p
@@ -99,6 +133,6 @@ while ($row = mysqli_fetch_array($result))
         </div>
     </div><hr>
 </main>
-<?php } ?>
+<?php  ?> -->
 <br><br><br>
 <?php include "../foot.html"; ?>
