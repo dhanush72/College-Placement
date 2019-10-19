@@ -68,7 +68,7 @@ border-top: 1px solid #7C7A7A;
                 </thead>
                  <tbody>
                      <?php
-while ($row = mysqli_fetch_array($result)){
+                while ($row = mysqli_fetch_array($result)){
                 $sid= $row['sid'];
                 $fullname= $row['fullname'];
                 $department = $row['department'];

@@ -57,7 +57,7 @@ include "tpomenu.php"; ?>
 <body>
 <!-- New Table -->
 <h3>TPO DETAILS</h3>
-<div class="table-wrapper">
+<!-- <div class="table-wrapper">
     <table class="fl-table">
         <thead>
         <tr>
@@ -79,10 +79,25 @@ include "tpomenu.php"; ?>
         </tr>
         <tbody>
     </table>
-</div>
+</div> -->
 <!-- End New Table -->
-
-
-
+<table class="table d-flex justify-content-center">
+     <thead>
+     	 <th>Name</th>
+     	 <th>Degree</th>
+     	 <th>Email</th>
+     	 <th>Mobile</th>
+     	 <th>Manage</th>
+     </thead>
+     <tbody>
+     	  <tr>
+		   <td><?php echo $name ?></td>
+        	<td><?php echo $degree ?></td>
+        <td><?php echo $email ?></td>
+        <td><?php echo $mobile ?></td>
+        <td><button  type="submit" class="btn btn-action">Edit Profile</button></td>
+     	  </tr>
+     </tbody>
+   </table>
 </body>
 <?php include "../foot.html"; ?>
