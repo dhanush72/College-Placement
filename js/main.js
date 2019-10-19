@@ -1,37 +1,22 @@
-$(function() {
-  $(".table-wrap").each(function() {
-    var nmtTable = $(this);
-    var nmtHeadRow = nmtTable.find("thead tr");
-    nmtTable.find("tbody tr").each(function() {
-      var curRow = $(this);
-      for (var i = 0; i < curRow.find("td").length; i++) {
-        var rowSelector = "td:eq(" + i + ")";
-        var headSelector = "th:eq(" + i + ")";
-        curRow.find(rowSelector).attr('data-title', nmtHeadRow.find(headSelector).text());
-      }
-    });
-  });
-});
-
-
 
 (function ($) {
     "use strict";
 
+
     /*==================================================================
-    [ Validate after type ]*/
-    $('.validate-input .input100').each(function(){
+    [ Focus Contact2 ]*/
+    $('.input100').each(function(){
         $(this).on('blur', function(){
-            if(validate(this) == false){
-                showValidate(this);
+            if($(this).val().trim() != "") {
+                $(this).addClass('has-val');
             }
             else {
-                $(this).parent().addClass('true-validate');
+                $(this).removeClass('has-val');
             }
-        })
+        })    
     })
-
-
+  
+  
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
@@ -53,11 +38,10 @@ $(function() {
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
            hideValidate(this);
-           $(this).parent().removeClass('true-validate');
         });
     });
 
-     function validate (input) {
+    function validate (input) {
         if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
             if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
                 return false;
@@ -74,30 +58,13 @@ $(function() {
         var thisAlert = $(input).parent();
 
         $(thisAlert).addClass('alert-validate');
-
-        $(thisAlert).append('<span class="btn-hide-validate">&#xf136;</span>')
-        $('.btn-hide-validate').each(function(){
-            $(this).on('click',function(){
-               hideValidate(this);
-            });
-        });
     }
 
     function hideValidate(input) {
         var thisAlert = $(input).parent();
+
         $(thisAlert).removeClass('alert-validate');
-        $(thisAlert).find('.btn-hide-validate').remove();
     }
-
-
-    /*==================================================================
-    [ Show / hide contact ]*/
-    $('.btn-hide-contact100').on('click', function(){
-        $('.container-contact100').fadeOut(300);
-    });
-
-    $('.btn-show-contact100').on('click', function(){
-        $('.container-contact100').fadeIn(300);
-    });
+    
 
 })(jQuery);

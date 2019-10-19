@@ -2,6 +2,7 @@
 include "tpomenu.php"; ?>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tpo/assets/css/new.css">
   <style type="text/css">
   body{
 		font-family: 'Poppins', sans-serif;
@@ -16,24 +17,20 @@ include "tpomenu.php"; ?>
   border: 0;
   border-top: 1px solid #7C7A7A;
   }
-  .Table{
+  /* .Table{
   	border: 2px dashed #34495e;
   	padding-bottom: 10px;
-  }
+  } */
   </style>
 </head>
 <?php
-					$tpoid = $_SESSION['s_id'];
-
-
-				$host="localhost";
-				$user="root";
-				$pass="";
-				$con = mysqli_connect("$host","$user","$pass");
-
-
-				if (!$con)
-				  {
+	$tpoid = $_SESSION['s_id'];
+    $host="localhost";
+	$user="root";
+	$pass="";
+	$con = mysqli_connect("$host","$user","$pass");
+    if (!$con)
+		{
 
 				echo "Error in DBConnect() = " . mssql_get_last_message();
 				  die('Could not connect: ' . mysqli_error());
@@ -52,100 +49,67 @@ include "tpomenu.php"; ?>
 
 
 ?>
-<div class="container Table">
-  <h2 align="center">Update Profile</h2>
+<div class="container">
+<h3>UPDATE TPO DETAILS</h3>
     <div id="respond">
-       <!----UPLOAD PHOTO BLOCK--->
-
- <div class="bs-example">
-            <table class="table">
+    <div class="table-wrapper">
+            <table class="fl-table">
                 <thead>
-                    <tr>
-                    <th> Upload Your Photo Here.</th>
-
-
-                    </tr>
+                <tr>
+                    <th>Upload Your Photo Here</th>
+                    <th>Edit Photo</th>
+                </tr>
                 </thead>
-                 <tbody>
-        <form action ='uploadfile.php' method='POST' enctype='multipart/form-data'>
-
-        <tr class="success">
-                        <td><input type='file' name='myfile'></td>
-
-
-
-		<td>Note: Please choose file less than 200Kbs</td>
-    <td> <input type ='submit' name='Upload'> </td>
-	</tr>
-
-
-        </form></tbody>
-      </table>
-      </div>
-
-
-       <!----UPLOAD PHOTO BLOCK ENDS--->
-        <!---UPDATE INFO BLOCK STARTS--->
-        <div class="bs-example">
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th>TPO Details</th>
-
-                    <th></th>
-                    <th>Present Details</th>
-                     <th>Update Your Details</th>
-                    </tr>
-                </thead>
-                 <tbody>
-                     <form action="tpoupdate.php" method="post" id="commentform">
-                    <tr class="active">
-                       <td>Name</td>
-                       <td>:</td>
-                        <td><?php echo $name ?></td>
-                        <td><input type="text" class="form-control" name="name" id="inputName" placeholder="Update Name" value="<?php echo $name ?>" required data-validation-required-message="Cannot Be Blank">
-                        </td>
-                     </tr>
-                    <tr class="warning">
-                        <td>Degree</td>
-                        <td>:</td>
-                        <td><?php echo $degree ?></td>
-                        <td><input type="text" class="form-control" name="degree" id="inputName" placeholder="Update Degree" value="<?php echo $degree ?>" required data-validation-required-message="Cannot Be Blank">
-                        </td>
-                     </tr>
-                    <tr class="danger">
-                        <td>Email</td>
-                        <td>:</td>
-                        <td><?php echo $email ?></td>
-                        <td><input type="text" class="form-control" id="inputmobile"                  placeholder="Update Email" name="email" value="<?php echo $email ?>" required data-validation-required-message="Cannot Be Blank">
-                        </td>
-                    </tr>
-
-                    <tr class="success">
-                        <td>Mobile</td>
-                        <td>:</td>
-                        <td><?php echo $mobile ?></td>
-                        <td><input type="text" class="form-control" id="inputaddress"                  placeholder="Update Mobile" name="mobile" value="<?php echo $mobile ?>" required data-validation-required-message="Cannot Be Blank">
-                        </td>
-
-                     </tr>
-
-                    <tr class="info">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                        <td style="float:right;">
-                            <button type="submit" class="btn btn-action">Submit</button>
-                        </td>
-                    </tr>
-
-
-
-                    </form>
-                </tbody></div></div></div>
+                <tbody>
+                <form action ='uploadfile.php' method='POST' enctype='multipart/form-data'>
+                <tr>
+                <td>
+                    <input type='file' name='myfile'>
+                </td>
+                <td><input type ='submit' class="btn btn-action" value="Upload" name='Upload'></td>
+                </tr>
+                </form>
+                <tbody>
             </table>
         </div>
+
+        <!-- New Table -->
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Degree</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                <th>Edit Profile</th>
+                </tr>
+                </thead>
+                <tbody>
+                <form action="tpoupdate.php" method="post" id="commentform">
+                    
+                <tr>
+                <td><?php echo $name ?></td>
+                <td><?php echo $degree ?></td>
+                <td><?php echo $email ?></td>
+                <td><?php echo $mobile ?></td>
+                </tr>
+                <tr>
+                 <td><input type="text" class="form-control" name="name" id="inputName" placeholder="Update Name" value="<?php echo $name ?>" required data-validation-required-message="Cannot Be Blank">
+                        </td>
+                        <td><input type="text" class="form-control" name="degree" id="inputName" placeholder="Update Degree" value="<?php echo $degree ?>" required data-validation-required-message="Cannot Be Blank">
+                        </td>
+                        <td><input type="text" class="form-control" id="inputmobile"                  placeholder="Update Email" name="email" value="<?php echo $email ?>" required data-validation-required-message="Cannot Be Blank">
+                        </td>
+                        <td><input type="text" class="form-control" id="inputaddress"                  placeholder="Update Mobile" name="mobile" value="<?php echo $mobile ?>" required data-validation-required-message="Cannot Be Blank">
+                        </td>
+                        <td><button  type="submit" class="btn btn-action">Submit</button></td>
+                </tr>
+                <tbody>
+            </table>
+        </div>
+        <!-- End New Table -->
+
     </div>
 </div>
 
@@ -171,6 +135,10 @@ include "tpomenu.php"; ?>
             </form>
 	</div>	<!-- /container -->
 </div>
+
+<!-- Update -->
+
+<!-- End Update -->
 <br><br><br><br><br>
         <!---UPDATE INFO BLOCK ENDS--->
 <?php include "../foot.html"; ?>

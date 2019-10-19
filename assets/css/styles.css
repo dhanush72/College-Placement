@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 html {
   font-size: 100%;
 }
 body {
   font-size: 15px;
   font-size: 0.9375rem;
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #666666;
   padding: 0;
 }
@@ -44,7 +46,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open sans', Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #333333;
 }
@@ -104,13 +106,13 @@ a:hover {
 #head {
   background: #f4f4f4 url(../images/sunrise.jpg) top center;
   background-size: cover;
-  color: #7C7C7C;
+  color: #7c7c7c;
   padding: 35px 0 35px 0;
 }
 #head img.img-circle {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   border: 9px solid rgba(0, 0, 0, 0.05);
   margin: 0 auto;
@@ -118,6 +120,7 @@ a:hover {
 #head .title {
   font-family: Alice, Georgia, serif;
   font-size: 49px;
+  margin-top: 5px;
   font-size: 3.0625rem;
 }
 #head .title a {
@@ -129,14 +132,14 @@ a:hover {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.2em;
-  color: #7C7C7C;
+  color: #7c7c7c;
   margin: 5px 0 0;
 }
 #head .tagline b {
   font-weight: normal;
 }
 #head .tagline a {
-  color: #5E5E5E;
+  color: #5e5e5e;
 }
 .home #head {
   padding: 90px 0;
@@ -171,7 +174,7 @@ a:hover {
   position: fixed;
   top: 0;
   left: 0;
-  opacity: .85;
+  opacity: 0.85;
 }
 .navbar-collapse {
   -webkit-border-radius: 0;
@@ -180,7 +183,7 @@ a:hover {
   -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -288,7 +291,7 @@ img {
   font-size: 0.75rem;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
   -webkit-border-radius: 0px;
   -webkit-background-clip: padding-box;
@@ -322,7 +325,7 @@ img {
 }
 .btn-action {
   font-weight: bold;
-  background: transparent!important;
+  background: transparent !important;
   border: 1px solid #333;
   text-shadow: none;
 }
@@ -366,7 +369,7 @@ img {
 }
 .featured h3 {
   font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -522,10 +525,10 @@ img {
 .entry-title span:before,
 .section-title span:after,
 .entry-title span:after {
-  content: "";
+  content: '';
   position: absolute;
   height: 4px;
-  top: .53em;
+  top: 0.53em;
   width: 400%;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
@@ -597,7 +600,7 @@ img {
   -moz-background-clip: padding;
   border-radius: 3px;
   background-clip: padding-box;
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open sans', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   text-decoration: none;

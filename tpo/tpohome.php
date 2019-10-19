@@ -31,7 +31,8 @@ include "tpomenu.php"; ?>
 
 ?>
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tpo/assets/css/new.css">
 	<style type="text/css">
 	body{
 		font-family: 'Poppins', sans-serif;
@@ -52,72 +53,32 @@ include "tpomenu.php"; ?>
 }
 	</style>
 </head>
-
 <body>
-
-	<br>
-	<br>
-
-<div class="container Table">
-	<div id="respond">
-<div class="bs-example">
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th>Tpo Details</th>
-                    <th></th>
-
-
-                    </tr>
-                </thead>
-                 <tbody>
-                     <form action="updateprofile.php" method="post" id="commentform">
-                    <tr class="active">
-                        <td>Name</td>
-												<td>:</td>
-                        <td><?php echo $name ?></td>
-                        <td></td><td></td>  <td></td>
-                     </tr>
-                         <tr class="warning">
-                        <td>Degree</td>
-												<td>:</td>
-                        <td><?php echo $degree ?></td>
-                         <td></td>  <td></td><td></td>
-                     </tr>
-                    <tr class="success">
-                        <td>Email</td>
-												<td>:</td>
-                        <td><?php echo $email ?></td>
-                       <td></td><td></td><td></td>
-                     </tr>
-
-                    <tr class="info">
-                        <td>Mobile</td>
-												<td>:</td>
-                        <td><?php echo $mobile ?></td>
-                    <td></td>
-                        <td></td><td></td>
-                    </tr>
-                    <!-- <tr class="active">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                    </tr> -->
-                </tbody>
-            </table>
-						<button style="float: right;" type="submit" class="btn btn-action">Edit Profile</button>
-        </div>
-    </div>
-</div>
-
 <!-- New Table -->
-
+<h3>TPO DETAILS</h3>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Degree</th>
+            <th>Email</th>
+            <th>Mobile</th>
+           <th>Edit Profile</th>
+        </tr>
+        </thead>
+        <tbody>
+        <form action="updateprofile.php" method="post" id="commentform">
+        <tr>
+        <td><?php echo $name ?></td>
+        <td><?php echo $degree ?></td>
+        <td><?php echo $email ?></td>
+        <td><?php echo $mobile ?></td>
+        <td><button  type="submit" class="btn btn-action">Edit Profile</button></td>
+        </tr>
+        <tbody>
+    </table>
+</div>
 <!-- End New Table -->
-
-
-</div><br><br><br><br><Br>
-
 </body>
 <?php include "../foot.html"; ?>

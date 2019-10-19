@@ -11,19 +11,73 @@
 
 <!-- Bootstrap -->
 	<link href="../assets/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	
 	<!-- Icons -->
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <!--	<link href="assets/css/font-awesome.css" rel="stylesheet">-->
     <!-- Fonts -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
-	<link rel="stylesheet" href="../assets/css/styles.css">
+	<link rel="stylesheet" href="../tpo/assets/css/styles.css">
+
+	<style>
+	
+	</style>
 
 </head>
 <body class="home">
 
+<div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+  <div class="text-white text-center py-5 px-4">
+    <div>
+	<span class="tagline">
+
+
+<?php
+	$tpoid = $_SESSION['s_id'];
+
+
+$host="localhost";
+$user="root";
+$pass="";
+$con = mysqli_connect("$host","$user","$pass");
+
+
+if (!$con)
+  {
+
+echo "Error in DBConnect() = " . mssqli_get_last_message();
+  die('Could not connect: ' . mysqli_error());
+
+  }
+
+mysqli_select_db($con,"placement" );
+
+$sql1 = "SELECT * from tpo where tid='{$tpoid}'";
+$result1 = mysqli_query($con,$sql1);
+$row1=mysqli_fetch_array($result1);
+$username=$row1['username'];
+
+$sql2 = "SELECT * from tpo_info where tid='{$tpoid}'";
+$result2 = mysqli_query($con,$sql2);
+$row2=mysqli_fetch_array($result2);
+
+$name=$row2['name'];
+?>
+<img class="img-circle" src="uploaded/<?php echo $name; ?> " height="200" width="200">
+<div class="text-center">
+<?php
+echo "<font color=white>"."Welcome"."&nbsp;".$name."</font>";
+?>
+</div>
+
+</span>
+    </div>
+  </div>
+</div>
+
 <header id="header">
-	<div id="head" class="parallax" parallax-speed="1">
+	<!-- <div id="head" class="parallax" parallax-speed="1">
 		<h1 id="logo" class="text-center">
 			<span class="tagline">
 
@@ -66,7 +120,7 @@
                 </span>
 
 		</h1>
-	</div>
+	</div> -->
 
 	<nav class="navbar navbar-default navbar-sticky">
 		<div class="container-fluid">
