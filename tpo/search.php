@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include "tpomenu.php"; ?>
 <?php
 					$tpoid = $_SESSION['s_id'];
@@ -20,28 +20,35 @@ include "tpomenu.php"; ?>
 				  }
 
 				mysqli_select_db($con,"placement");
-	?>  
-<style type="text/css">
+    ?>  
+    <head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../tpo/assets/css/new.css">
+    <style type="text/css">
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
     .bs-example{
     	margin: 20px;
     }
     
     hr {
-margin-top: 20px;
-margin-bottom: 20px;
-border: 0;
-border-top: 1px solid #7C7A7A;
-}
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #7C7A7A;
+        }
 </style>
+    </head>
+
 
 <body>
 
 <div class="">
 	<div id="respond">
-        <center><h4 style="font-family:Acadian;
+        <center><h4 style="font-family: 'Poppins', sans-serif;
                             font-size:1.5em;
-                            font-variant:small-caps;
-                            font-style:oblique;
+                            
                             font-weight:800;">
                                            Search Students 
                 </h4>
@@ -49,9 +56,17 @@ border-top: 1px solid #7C7A7A;
         <div class="container">
 <div class="bs-example">
 <table>
+
     <!---Single Search Form COde Below-->
-<form action="" method="post">                                 
-<tr><td><input list="t1" required placeholder="Please Choose" name="option1">
+<form action="" method="post">
+    
+
+<!-- New -->
+
+<!-- End -->
+<tr>
+    <td>
+        <!-- <input list="t1" required placeholder="Please Choose" name="option1">
   <datalist id="t1">
       <option value="fullname">
       <option value="department">
@@ -59,16 +74,30 @@ border-top: 1px solid #7C7A7A;
       <option value="deg_agg">
       <option value="ssc">
       <option value="hsc">
-  </datalist></td>
+  </datalist> -->
+  <div class="select">
+  <select id="t1">
+    <option selected disabled>Choose an option</option>
+    <option value="fullname">Fullname</option>
+      <option value="department">Department</option>
+      <option value="diploma_agg">Diploma</option>
+      <option value="deg_agg">Degree</option>
+      <option value="ssc">10th</option>
+      <option value="hsc">PUC</option>
+  </select>
+</div>
+</td>
    <td><input type="text" placeholder="Enter Search Term" required name="term1" maxlength="10">
          <input type="hidden" value="squery" name="search"></td>
-    </tr>
-    <tr>
+
+
+
      <td><button type="submit" class="btn btn-action">Search</button></td>
     </tr>
 </form></table>
     <!--Multi Search form code Below -->
     <br><br>
+
 <table>
     <form action="" method="post">                                 
 <tr><td><input list="t2" placeholder="Please Choose Option 1" required name="option2">
