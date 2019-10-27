@@ -11,8 +11,6 @@ $pass="root";
 $conn=mysql_connect("$host","$user","$pass");
 mysql_select_db("placement",$conn);
 
-
-
 $sql="insert into applied_stud (jid,sid) values ('$jid','$sid')";
 
 
